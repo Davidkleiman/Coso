@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil del Usuario</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-link">
+      <img src="C:\xampp\htdocs\MuscleDk\right-arrow.png" alt="Flecha de Volver" class="back-icon">
+    </a>
+    <h1>Perfil del Usuario</h1>
+  </header>
+  <main>
+    <div class="profile-container">
+      <h2>Información Personal</h2>
+      <form id="profileForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" required>
+
+        <label for="age">Edad:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="gender">Género:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Masculino</option>
+          <option value="female">Femenino</option>
+        </select>
+
+        <button type="submit">Guardar Perfil</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 MuscleScanDK. Todos los derechos reservados.</p>
+  </footer>
+  <script src="profile.js"></script>
+</body>
+</html>

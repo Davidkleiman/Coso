@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuscleScanDK</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>MuscleScan<span>DK</span></h1>
+    <nav>
+      <a href="profile.html" class="profile-link">
+        <img src="account_17740774.png" alt="Perfil Icono" class="profile-icon"> <!-- Ruta de la imagen corregida -->
+      </a>
+    </nav>
+    <div class="connection-status">
+      <div class="led-indicator" id="led-indicator"></div>
+      <span id="connection-status">Desconectado</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="graph-container">
+      <div class="graph-card">
+        <input type="text" id="muscle1Name" value="Músculo 1" class="muscle-name" readonly>
+        <div class="intensity-bar">
+          <div class="intensity-fill" id="intensity1"></div>
+        </div>
+        <canvas id="muscle1"></canvas>
+      </div>
+      <div class="graph-card">
+        <input type="text" id="muscle2Name" value="Músculo 2" class="muscle-name" readonly>
+        <div class="intensity-bar">
+          <div class="intensity-fill" id="intensity2"></div>
+        </div>
+        <canvas id="muscle2"></canvas>
+      </div>
+      <div class="graph-card">
+        <input type="text" id="muscle3Name" value="Músculo 3" class="muscle-name" readonly>
+        <div class="intensity-bar">
+          <div class="intensity-fill" id="intensity3"></div>
+        </div>
+        <canvas id="muscle3"></canvas>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="startBtn">Iniciar</button>
+      <button id="stopBtn">Detener</button>
+      <button id="saveBtn">Guardar</button>
+      <button id="clearBtn">Borrar</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 MuscleScanDK. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Ventana emergente -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <div class="popup-header">
+        <p>¿Qué deseas hacer?</p>
+        <button id="closePopupBtn" class="close-button"><i class="fas fa-times"></i></button>
+      </div>
+      <button id="shareBtn">Compartir</button>
+      <button id="saveDeviceBtn">Guardar en Dispositivo</button>
+    </div>
+  </div>
+
+  <!-- Ventana emergente de información del dispositivo -->
+  <div id="deviceInfoPopup" class="popup hidden">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h2>Información del Dispositivo</h2> <!-- Título más grande -->
+        <button id="closeDeviceInfoPopupBtn" class="close-button"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="device-info">
+        <p><strong>Nombre del Dispositivo:</strong> <span id="deviceName">Arduino Uno</span></p>
+        <p><strong>Paquetes Enviados:</strong> <span id="packetsSent">0</span></p>
+        <p><strong>Paquetes Recibidos:</strong> <span id="packetsReceived">0</span></p>
+        <p><strong>Velocidad:</strong> <span id="speed">0 kbps</span></p>
+        <p><strong>Estado Final:</strong> <span id="finalStatus">Desconocido</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
